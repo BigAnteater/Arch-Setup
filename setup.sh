@@ -64,7 +64,7 @@ echo "[Settings]" > "settings.ini"
 echo "gtk-theme-name = Orchis-purple-dark-compact" > "settings.ini"
 echo "gtk-icon-theme-name = Tela-circle-purple-dark" > "settings.ini"
 # Installs wallpaper themes.
-cp -r "/home/$USERNAME/Arch-setup/.wallpapers/" "/home/$USERNAME/.wallpapers/"
+cp -r "/home/$USERNAME/Arch-setup/wallpapers/" "/home/$USERNAME/.wallpapers/"
 clear
 
 # Installs fish shell settings.
