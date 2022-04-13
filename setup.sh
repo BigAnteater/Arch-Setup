@@ -33,7 +33,6 @@ clear
 # Installs DWM for the user.
 echo "First we will be setting up DWM."
 sleep 2s
-pacman -Syu ttf-fira-code ttf-font-awesome
 cd "/usr/local"
 git clone https://github.com/BigAnteater/dwm-config
 cd "dwm-config"
@@ -44,6 +43,7 @@ clear
 echo "Now we will be installing the themes and applications."
 sleep 2s
 cd "/home/$USERNAME/"
+pacman -S archlinux-keyring
 pacman -S neovim thunar vlc htop fish --noconfirm
 # Installs themes
 mkdir .rice
