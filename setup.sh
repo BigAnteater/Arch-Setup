@@ -33,6 +33,8 @@ clear
 # Installs DWM for the user.
 echo "First we will be setting up DWM."
 sleep 2s
+pacman -S xorg lightdm lightdm-gtk-greeter --noconfirm
+systemctl enable lightdm
 cd "/usr/local"
 git clone https://github.com/BigAnteater/dwm-config
 cd "dwm-config"
