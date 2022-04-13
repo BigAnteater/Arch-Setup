@@ -66,7 +66,6 @@ echo "[Settings]" > "settings.ini"
 echo "gtk-theme-name = Orchis-purple-dark-compact" > "settings.ini"
 echo "gtk-icon-theme-name = Tela-circle-purple-dark" > "settings.ini"
 # Installs wallpaper themes.
-cp -r "/home/$USERNAME/Arch-setup/wallpapers/" "/home/$USERNAME/.wallpapers/"
 clear
 
 # Installs fish shell settings.
@@ -81,7 +80,7 @@ clear
 # Sets up pipewire.
 echo "Finally, we will be setting up pipewire for audio."
 sleep 3s
-pacman -S pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pavucontrol --noconfirm
+pacman -S pipewire wireplumber pipewire-alsa pavucontrol --noconfirm
 sleep 2s
 clear
 
@@ -93,8 +92,4 @@ if [ $REBOOT = y ]
 		echo "rebooting..."
 		sleep 5s
 		reboot
-fi if [ $REBOOT = n ]
-	then
-		echo "sounds good!"
-		exit
 fi
