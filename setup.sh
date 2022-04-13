@@ -80,7 +80,6 @@ clear
 echo "Finally, we will be setting up pipewire for audio."
 sleep 3s
 pacman -S pipewire wireplumber pipewire-alsa pipewire-pulse pipewire-jack pavucontrol --noconfirm
-systemctl enable pipewire-pulse.service
 sleep 2s
 clear
 
