@@ -52,19 +52,19 @@ mkdir .rice
 cd .rice
 git clone https://github.com/vinceliuice/Orchis-theme
 cd Orchis-theme
-./install -t purple -c dark --tweaks compact
+bash install.sh -t purple
 cd "/home/$USERNAME/.rice/"
 git clone https://github.com/vinceliuice/Tela-circle-icon-theme
 cd Tela-circle-icon-theme
-./install.sh purple
+bash install.sh purple
 # Adds themes to the gtk config.
-cd "/home/$USERNAME/.config/"
-mkdir "gtk-3.0"
-cd "gtk-3.0"
-touch "settings.ini"
-echo "[Settings]" > "settings.ini"
-echo "gtk-theme-name = Orchis-purple-dark-compact" > "settings.ini"
-echo "gtk-icon-theme-name = Tela-circle-purple-dark" > "settings.ini"
+cd /home/$USERNAME/.config/
+mkdir gtk-3.0
+cd gtk-3.0
+touch settings.ini
+echo "[Settings]" > settings.ini
+echo "gtk-theme-name = Orchis-purple-dark-compact" > settings.ini
+echo "gtk-icon-theme-name = Tela-circle-purple-dark" > settings.ini
 # Installs wallpaper themes.
 clear
 
