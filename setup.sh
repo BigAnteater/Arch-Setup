@@ -62,8 +62,7 @@ bash install.sh purple
 cd "/home/$currentUser/.config/"
 mkdir "gtk-3.0"
 cd "gtk-3.0"
-touch settings.ini
-echo -e '[Settings]\ngtk-theme-name = Orchis-purple-dark-compact\ngtk-icon-theme-name = Tela-circle-purple-dark'  settings.ini
+cp -r "/home/$currentUser/Arch-setup/settings.ini/" .
 # Installs wallpaper themes.
 cp -r "/home/$currentUser/Arch-setup/wallpapers/" "/home/$currentUser/.wallpapers"
 clear
@@ -71,9 +70,8 @@ clear
 # Installs fish shell settings.
 echo "Unlike most people, I'm a weirdo so I use fish. So now you have to use my lame fish config too."
 sleep 3s
-rm -rf "/home/$currentUser/.config/fish/"
-cd "/home/$currentUser/.config/"
 cp -r "/home/$currentUser/Arch-Setup/fish" "/home/$currentUser/.config/"
+pacman -S fish --noconfirm
 chsh -s /bin/fish $currentUser
 clear
 
