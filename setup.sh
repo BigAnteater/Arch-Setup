@@ -63,9 +63,7 @@ cd "/home/$currentUser/.config/"
 mkdir "gtk-3.0"
 cd "gtk-3.0"
 touch settings.ini
-echo "[Settings]" > settings.ini
-echo "gtk-theme-name = Orchis-purple-dark-compact" > settings.ini
-echo "gtk-icon-theme-name = Tela-circle-purple-dark" > settings.ini
+echo -e '[Settings]\ngtk-theme-name = Orchis-purple-dark-compact\ngtk-icon-theme-name = Tela-circle-purple-dark'  settings.ini
 # Installs wallpaper themes.
 clear
 
@@ -84,6 +82,9 @@ sleep 3s
 pacman -S pipewire wireplumber pipewire-alsa pavucontrol --noconfirm
 sleep 2s
 clear
+
+# Confirms that everything in the home folder isn't messed up
+chown -R $currentUser /home/$currentUser
 
 # Outro and reboot prompt
 echo "You have successfully installed my config! Now you should reboot. y/n"
