@@ -26,12 +26,13 @@ clear
 
 # Asks for the user's username.
 echo "What is your username?"
-read USERNAME
+read currentUser
 sleep 2s
 clear
 
 # Installs DWM for the user.
 echo "First we will be setting up DWM."
+mkdir .config
 sleep 2s
 pacman -S xorg lightdm lightdm-gtk-greeter --noconfirm
 systemctl enable lightdm
@@ -44,7 +45,7 @@ clear
 # Installs applications for the user
 echo "Now we will be installing the themes and applications."
 sleep 2s
-cd "/home/$USERNAME/"
+cd "/home/$currentUser/"
 pacman -S archlinux-keyring
 pacman -S neovim thunar vlc htop fish --noconfirm
 # Installs themes
@@ -53,14 +54,14 @@ cd .rice
 git clone https://github.com/vinceliuice/Orchis-theme
 cd Orchis-theme
 bash install.sh -t purple
-cd "/home/$USERNAME/.rice/"
+cd "/home/$currentUser/.rice/"
 git clone https://github.com/vinceliuice/Tela-circle-icon-theme
 cd Tela-circle-icon-theme
 bash install.sh purple
 # Adds themes to the gtk config.
-cd /home/$USERNAME/.config/
-mkdir gtk-3.0
-cd gtk-3.0
+cd "/home/$currentUser/.config/"
+mkdir "gtk-3.0"
+cd "gtk-3.0"
 touch settings.ini
 echo "[Settings]" > settings.ini
 echo "gtk-theme-name = Orchis-purple-dark-compact" > settings.ini
@@ -71,10 +72,10 @@ clear
 # Installs fish shell settings.
 echo "Unlike most people, I'm a weirdo so I use fish. So now you have to use my lame fish config too."
 sleep 3s
-rm -rf "/home/$USERNAME/.config/fish/"
-cd "/home/$USERNAME/.config/"
-cp -r "/home/$USERNAME/Arch-Setup/fish" "/home/$USERNAME/.config/"
-chsh -s /bin/fish $USERNAME
+rm -rf "/home/$currentUser/.config/fish/"
+cd "/home/$currentUser/.config/"
+cp -r "/home/$currentUser/Arch-Setup/fish" "/home/$currentUser/.config/"
+chsh -s /bin/fish $currentUser
 clear
 
 # Sets up pipewire.
