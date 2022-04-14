@@ -65,6 +65,7 @@ cd "gtk-3.0"
 touch settings.ini
 echo -e '[Settings]\ngtk-theme-name = Orchis-purple-dark-compact\ngtk-icon-theme-name = Tela-circle-purple-dark'  settings.ini
 # Installs wallpaper themes.
+cp -r "/home/$currentUser/Arch-setup/wallpapers/" "/home/$currentUser/.wallpapers"
 clear
 
 # Installs fish shell settings.
