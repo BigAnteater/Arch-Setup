@@ -32,6 +32,7 @@ clear
 
 # Installs DWM for the user.
 echo "First we will be setting up DWM."
+rm -rf "/home/$currentUser/.config/"
 mkdir "/home/$currentUser/.config/"
 sleep 2s
 pacman -S xorg lightdm lightdm-gtk-greeter --noconfirm
