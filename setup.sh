@@ -24,18 +24,10 @@ fi
 sleep 1s
 clear
 
-# Asks for the user's username.
-echo "What is your username?"
-read currentUser
-sleep 2s
-clear
-
 # Installs DWM for the user.
 echo "First we will be setting up DWM."
-rm -rf "/home/$currentUser/.config/"
-mkdir "/home/$currentUser/.config/"
 sleep 2s
-pacman -S xorg lightdm lightdm-gtk-greeter --noconfirm
+pacman -S xorg lightdm lightdm-gtk-greeter gtk3 gtk2 neovim thunar vlc htop fish archlinux-keyring --noconfirm
 systemctl enable lightdm
 cd "/usr/local"
 git clone https://github.com/BigAnteater/dwm-config
@@ -43,12 +35,13 @@ cd "dwm-config"
 bash install.sh
 clear
 
-# Installs applications for the user
-echo "Now we will be installing the themes and applications."
-sleep 2s
-cd "/home/$currentUser/"
-pacman -S archlinux-keyring
-pacman -S neovim thunar vlc htop fish --noconfirm
+# Installs fish shell settings.
+echo "Unlike most people, I'm a weirdo so I use fish. So now you have to use my lame fish config too."
+sleep 3s
+pacman -S fish --noconfirm
+chsh -s /bin/fish $currentUser
+clear
+
 # Installs themes
 mkdir .rice
 cd .rice
@@ -68,13 +61,6 @@ cp -r "/home/$currentUser/Arch-setup/settings.ini/" .
 cp -r "/home/$currentUser/Arch-setup/wallpapers/" "/home/$currentUser/.wallpapers"
 clear
 
-# Installs fish shell settings.
-echo "Unlike most people, I'm a weirdo so I use fish. So now you have to use my lame fish config too."
-sleep 3s
-cp -r "/home/$currentUser/Arch-Setup/fish" "/home/$currentUser/.config/"
-pacman -S fish --noconfirm
-chsh -s /bin/fish $currentUser
-clear
 
 # Sets up pipewire.
 echo "Finally, we will be setting up pipewire for audio."
