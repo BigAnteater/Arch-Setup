@@ -5,7 +5,7 @@ sleep 3s
 clear
 
 # Installs themes
-echo "First we will be installing the GTK themes into ~/.rice" 
+echo "First we will be installing the GTK themes into ~/.themes" 
 sleep 2s
 
 mkdir ~/.themes
@@ -38,7 +38,11 @@ fi
 # Installs wallpaper themes.
 cp -r ~/Arch-setup/wallpapers/ ~/.wallpapers
 
-sleep 2s
+# Changes the shell for fish
+echo "Finally, we will be making fish run as the default shell."
+chsh -s /bin/fish
 
+# Small talk
+sleep 2s
 echo "customization has been configured!"
 clear

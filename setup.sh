@@ -39,7 +39,6 @@ clear
 echo "Unlike most people, I'm a weirdo so I use fish. So now you have to use my lame fish config too."
 sleep 3s
 pacman -S fish --noconfirm
-chsh -s /bin/fish $currentUser
 clear
 
 # Sets up pipewire.
@@ -48,9 +47,6 @@ sleep 3s
 pacman -S pipewire wireplumber pipewire-alsa pavucontrol --noconfirm
 sleep 2s
 clear
-
-# Confirms that everything in the home folder isn't messed up
-chown -R $currentUser /home/$currentUser
 
 # Outro and reboot prompt
 echo "You have successfully installed my config! Now you should reboot. y/n"
