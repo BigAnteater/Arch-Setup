@@ -42,26 +42,6 @@ pacman -S fish --noconfirm
 chsh -s /bin/fish $currentUser
 clear
 
-# Installs themes
-mkdir .rice
-cd .rice
-git clone https://github.com/vinceliuice/Orchis-theme
-cd Orchis-theme
-bash install.sh -t purple
-cd "/home/$currentUser/.rice/"
-git clone https://github.com/vinceliuice/Tela-circle-icon-theme
-cd Tela-circle-icon-theme
-bash install.sh purple
-# Adds themes to the gtk config.
-cd "/home/$currentUser/.config/"
-mkdir "gtk-3.0"
-cd "gtk-3.0"
-cp -r "/home/$currentUser/Arch-setup/settings.ini/" .
-# Installs wallpaper themes.
-cp -r "/home/$currentUser/Arch-setup/wallpapers/" "/home/$currentUser/.wallpapers"
-clear
-
-
 # Sets up pipewire.
 echo "Finally, we will be setting up pipewire for audio."
 sleep 3s
